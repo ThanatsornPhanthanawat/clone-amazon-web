@@ -15,7 +15,8 @@ export default function NavbarBelt() {
             w-full 
             h-[60px] 
             text-white 
-            box-border">
+            box-border
+            whitespace-nowrap">
             {/* left side */}
             <div className="
                 flex 

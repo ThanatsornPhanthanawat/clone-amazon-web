@@ -18,7 +18,8 @@ export function NavbarBanner() {
                 flex
                 h-[39px]
                 justify-between
-                text-white">
+                text-white
+                whitespace-nowrap">
             {/* left side */}
             <div className="flex">
                 <div className="

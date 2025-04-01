@@ -6,7 +6,7 @@ import NavbarBelt from "./navbar-belt/navbar-belt";
 
 export function Navbar() {
     return (
-        <div className="w-full flex flex-col">
+        <div>
           <NavbarBelt />
           <NavbarBanner />
         </div>
