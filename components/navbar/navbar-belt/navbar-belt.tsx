@@ -3,6 +3,7 @@ import * as React from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
+import { LuShoppingCart } from "react-icons/lu";
 
 
 
@@ -15,6 +16,7 @@ export default function NavbarBelt() {
             h-[60px] 
             text-white 
             box-border">
+            {/* left side */}
             <div className="
                 flex 
                 gap-[5px] 
@@ -77,13 +79,14 @@ export default function NavbarBelt() {
                 </div>
             </div>
 
+            {/* center search bar */}
             <div className="
                 flex
                 items-center
                 justify-center
                 py-[10px]
-                px-[4px]
-                w-1/2
+                px-[10px]
+                w-3/5
                 ">
                 <div className="
                     flex
@@ -119,19 +122,135 @@ export default function NavbarBelt() {
                             font-medium
                             bg-white
                             p-[8px]
-                            w-full
+                            flex-grow
                             text-black
                             placeholder:text-gray-500
                             placeholder:text-[15px]
                             focus:outline-none
                             " />
-                    <div>
-                        <AiOutlineSearch className="text-[26px]"/>
+                    <div className="
+                        bg-[#febd69]
+                        text-[10px]
+                        rounded-r-[5px]
+                        cursor-pointer
+                        p-[10px]
+                        flex
+                        items-center
+                        justify-center
+                        hover:bg-[#F3A847]
+                        ">
+                        <AiOutlineSearch className="text-[26px] text-black" />
                     </div>
                 </div>
             </div>
 
-            <div></div>
+            {/* left side */}
+            <div className="
+                p-[5px]
+                text-white
+                flex
+                gap-[1px]">
+                <div className="
+                    flex
+                    justify-center
+                    items-center
+                    pt-[10px]
+                    p-[8px]
+                    gap-[5px]
+                    cursor-pointer
+                    hover:rounded-[3px]
+                    hover:border-[1px]
+                    hover:border-solid
+                    ">
+                    <Image
+                        src="/usaFlag2.png"
+                        alt="usaFlag"
+                        width={25}
+                        height={25}
+                    />
+                    <div className="
+                        text-sm
+                        flex
+                        items-center
+                        font-bold">EN
+                        <MdOutlineArrowDropDown className="text-base mt-1 -ml-0.4 text-[#ccc]" /></div>
+                </div>
+
+                <div className="
+                    flex
+                    relative
+                    text-white
+                    no-underline
+                    flex-col
+                    p-[8px]
+                    cursor-pointer
+                    hover:rounded-[3px]
+                    hover:border-[1px]
+                    hover:border-solid">
+                    <div className="
+                        text-[12px]
+                        font-medium
+                        ">Hello, sign in</div>
+                    <div className="
+                        leading-[15px]
+                        font-semibold
+                        tracking-tighter">Account & Lists</div>
+                </div>
+
+                <div className="
+                    flex
+                    relative
+                    text-white
+                    no-underline
+                    flex-col
+                    p-[8px]
+                    cursor-pointer
+                    hover:rounded-[3px]
+                    hover:border-[1px]
+                    hover:border-solid">
+                    <div className="
+                        text-[12px]
+                        font-medium
+                        ">Returns</div>
+                    <div className="
+                        leading-[15px]
+                        font-semibold
+                        tracking-tighter">& Orders</div>
+                </div>
+
+                <div className="
+                    flex
+                    relative
+                    text-white
+                    no-underline
+                    flex-col
+                    p-[8px]
+                    pt-[15px]
+                    cursor-pointer
+                    hover:rounded-[3px]
+                    hover:border-[1px]
+                    hover:border-solid">
+                    <span className="
+                        absolute
+                        bottom-[50%]
+                        left-[25%]
+                        text-[#febd69]
+                        font-semibold
+                        text-base">2</span>
+                    <div className="
+                        text-[25px]
+                        font-medium
+                        flex
+                        items-center
+                        ">
+                        <LuShoppingCart /><span className="
+                                                    text-sm 
+                                                    font-semibold
+                                                    pt-[10px]
+                                                    ">Cart</span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
