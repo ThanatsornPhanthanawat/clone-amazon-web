@@ -87,7 +87,7 @@ export default function NavbarBelt() {
                 justify-center
                 py-[10px]
                 px-[10px]
-                w-3/5
+                w-4/5
                 ">
                 <div className="
                     flex
