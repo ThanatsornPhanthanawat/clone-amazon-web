@@ -1,12 +1,13 @@
 import * as React from "react";
 import HomeBanner from "./home-banner";
-import HomeDetails from "./home-details";
+import Footer from "@/components/footer/footer";
+
 
 export default function HomeScreen() {
     return (
         <div className="">
           <HomeBanner />
-          <HomeDetails />
+          <Footer />
         </div>
       );
 }

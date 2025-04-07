@@ -9,14 +9,16 @@ import { LuShoppingCart } from "react-icons/lu";
 
 export default function NavbarBelt() {
     return (
-        <div className="
+        <div className=" ">
+            <div className="
             bg-[#131921] 
             flex 
             w-full 
             h-[60px] 
             text-white 
             box-border
-            whitespace-nowrap">
+            whitespace-nowrap
+            ">
             {/* left side */}
             <div className="
                 flex 
@@ -253,5 +255,7 @@ export default function NavbarBelt() {
                 </div>
             </div>
         </div>
+        </div>
+        
     );
 }
