@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from 'next/link';
 import * as React from "react";
 import { IoMdMenu } from "react-icons/io";
 
@@ -23,10 +23,10 @@ export function NavbarBanner() {
                 {
                     option.map((item, ind) => {
                         return (
-                            <div className=" flex px-[9px] py-[8px] justify-center text-white items-center cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid"
+                            <Link href="/products" className=" flex px-[9px] py-[8px] justify-center text-white items-center cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid"
                                 key={ind}>
                                 <div className="text-sm pl-[5px]">{item.name}</div>
-                            </div>
+                            </Link>
                         )
                     })
                 }

@@ -4,7 +4,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { LuShoppingCart } from "react-icons/lu";
-
+import Link from 'next/link';
 
 
 export default function NavbarBelt() {
@@ -13,9 +13,9 @@ export default function NavbarBelt() {
             <div className="bg-[#131921] flex w-full h-[60px] text-white box-border whitespace-nowrap">
                 {/* Left side */}
                 <div className="flex gap-[5px] p-[8px]">
-                    <div className="w-[110px] h-[50px] no-underline text-white flex p-[8px] cursor-pointer hover:border-[1px] hover:border-solid hover:rounded-[3px]">
+                    <Link href="/" className="w-[110px] h-[50px] no-underline text-white flex p-[8px] cursor-pointer hover:border-[1px] hover:border-solid hover:rounded-[3px]">
                         <Image src="/amazonLogo.png" alt="amazonLogo" width={97} height={0} className="object-contain transition-none" />
-                    </div>
+                    </Link>
 
                     <div className="flex items-center justify-center gap-[5px] p-[8px] h-[50px] cursor-pointer hover:border-[1px] hover:border-solid hover:rounded-[3px]">
                         <div className="w-[10px] pt-[7px]">
