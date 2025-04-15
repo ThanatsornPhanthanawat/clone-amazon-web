@@ -20,15 +20,20 @@ export default function Products() {
     }
   };
 
-  const items = ["Trending", "Lightning deals", "Customers' Most-Loved", "Spring Favorites", "Fashion", "Home", "Toys&Games", "Beauty", "Electronics", "Devices", "Kitchen", "Everyday Essentials",
-    "Amazon Brands", "Computers&Accessories", "Pet Suppliers", "Furniture", "TVs&Accessories", "Home DIY&Appliances", "Sport&Outdoors", "Grocery", "Health&Household", "Cell Phones&Accessories",
-    "Small Business", "Video Games", "Lawn&Garden", "Automotive", "Outlet", "Camera&Photo", "Books", "Jewelry", "Baby", "Office Supplies", "Musical Instruments", "Coupons"
+  const items = ["Trending", "Lightning deals", "Customers' Most-Loved", "Spring Favorites", "Fashion", "Home", "Toys & Games", "Beauty", "Electronics", "Devices", "Kitchen", "Everyday Essentials",
+    "Amazon Brands", "Computers & Accessories", "Pet Suppliers", "Furniture", "TVs & Accessories", "Home DIY & Appliances", "Sport & Outdoors", "Grocery", "Health & Household", "Cell Phones & Accessories",
+    "Small Business", "Video Games", "Lawn & Garden", "Automotive", "Outlet", "Camera & Photo", "Books", "Jewelry", "Baby", "Office Supplies", "Musical Instruments", "Coupons"
   ];
 
-  const allDepartments = ["All", "Amazon Devices&Accessories", "Appliances", "Arts, Crafts&Sewing", "Audible Books&Originals", "Automotive", "Baby Products", "Beauty&Personal Care", "Books",
-    "CDs&Vinyl", "Cell Phones&Accessories", "Clothing,Shoes&Jewelry", "Electronics", "Everything Else", "Grocery&Gourmet Food", "Handmade Products", "Health&Household", "Home&Kitchen", "Industrial&Scientific",
-    "Kindle Store", "Movies&TV", "Musical Instruments", "Office Products", "Patio,Lawn&Garden", "Pet Suppliers", "Software", "Sports&Outdoors", "Tools&Home Improvement", "Toys&Games", "Videos Games"
-  ]
+  const allDepartments = ["All", "Amazon Devices & Accessories", "Appliances", "Arts, Crafts & Sewing", "Audible Books & Originals", "Automotive", "Baby Products", "Beauty & Personal Care", "Books",
+    "CDs & Vinyl", "Cell Phones & Accessories", "Clothing,Shoes & Jewelry", "Electronics", "Everything Else", "Grocery & Gourmet Food", "Handmade Products", "Health & Household", "Home & Kitchen", "Industrial & Scientific",
+    "Kindle Store", "Movies & TV", "Musical Instruments", "Office Products", "Patio,Lawn & Garden", "Pet Suppliers", "Software", "Sports & Outdoors", "Tools & Home Improvement", "Toys & Games", "Videos Games"
+  ];
+
+  const [showMore, setShowMore] = useState(false);
+  const [selectedDepartment, setSelectedDepartment] = useState("All");
+
+  const departmentsToShow = showMore ? allDepartments : allDepartments.slice(0, 5);
 
   return (
     <div className="w-full ">
@@ -64,8 +69,29 @@ export default function Products() {
         </div>
         <div className="flex py-[16px] px-[px]">
           {/* left product page */}
-          <div className="w-[14%] border-r-2 border-[#ddd] px-[25px]">
-            <div>Department</div>
+          <div className="w-[15%] border-r-2 border-[#ddd] px-[25px]">
+            <div>
+              <div className="text-base font-bold pb-[8px]">Department</div>
+              <div className="flex flex-col gap-2">
+                {departmentsToShow.map((dept, index) => (
+                  <label key={index} className="flex item-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none ">
+                    <input
+                      type="radio"
+                      name="department"
+                      value={dept}
+                      checked={selectedDepartment === dept}
+                      onChange={() => setSelectedDepartment(dept)} />
+                    {dept}
+                  </label>
+                ))}
+              </div>
+              <div
+                className="mt-2 text-[#2162a1] cursor-pointer hover:underline hover:text-[#033d75]"
+                onClick={() => setShowMore(!showMore)}>
+                {showMore ? "See less" : "See more"}
+              </div>
+            </div>
+
           </div>
 
         </div>
