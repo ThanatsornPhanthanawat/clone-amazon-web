@@ -30,10 +30,27 @@ export default function Products() {
     "Kindle Store", "Movies & TV", "Musical Instruments", "Office Products", "Patio,Lawn & Garden", "Pet Suppliers", "Software", "Sports & Outdoors", "Tools & Home Improvement", "Toys & Games", "Videos Games"
   ];
 
+  const allBrands = ["Ring", "Blink", "Sperax", "Amazon Basics", "OLANLY", "SAMSUNG", "Bedsure", "Majestic Pure", "ECOVACS", "Waterpik", "Coop Home Goods", "Shark", "PRETTYGARDEN", "G4Free", "Dagacci Medical Uniform", "AVENT",
+    "VALSOLE", "YESNO", "WYZE", "Google"
+  ];
+
   const [showMore, setShowMore] = useState(false);
   const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [lastClickedBrand, setLastClickedBrand] = useState<string | null>(null);
 
   const departmentsToShow = showMore ? allDepartments : allDepartments.slice(0, 5);
+  const brandsToShow = showMore ? allBrands : allBrands.slice(0, 4);
+
+  const toggleBrand = (brand: string) => {
+    setLastClickedBrand(brand);
+
+    if (selectedBrands.includes(brand)) {
+      setSelectedBrands(selectedBrands.filter((b) => b !== brand));
+    } else {
+      setSelectedBrands([...selectedBrands, brand]);
+    }
+  }
 
   return (
     <div className="w-full ">
@@ -69,7 +86,7 @@ export default function Products() {
         </div>
         <div className="flex py-[16px] px-[px]">
           {/* left product page */}
-          <div className="w-[15%] border-r-2 border-[#ddd] px-[25px]">
+          <div className="w-[16%] px-[25px]">
             <div>
               <div className="text-base font-bold pb-[8px]">Department</div>
               <div className="flex flex-col gap-2">
@@ -80,7 +97,8 @@ export default function Products() {
                       name="department"
                       value={dept}
                       checked={selectedDepartment === dept}
-                      onChange={() => setSelectedDepartment(dept)} />
+                      onChange={() => setSelectedDepartment(dept)}
+                      className="accent-[#2162a1] scale-175" />
                     {dept}
                   </label>
                 ))}
@@ -92,6 +110,34 @@ export default function Products() {
               </div>
             </div>
 
+            <div>
+              <div className="text-base font-bold pb-[8px] pt-[15px]">Brands</div>
+              <div className="flex flex-col gap-2">
+                {brandsToShow.map((brand, index) => (
+                  <label
+                    key={index}
+                    className={`flex items-center gap-2 px-1 py-[2px] rounded ${lastClickedBrand === brand ? "outline outline-2 outline-[#2162a1]" : ""
+                      }`}>
+                    <input
+                      type="checkbox"
+                      value={brand}
+                      checked={selectedBrands.includes(brand)}
+                      onChange={() => toggleBrand(brand)}
+                      className="accent-[#2162a1] scale-175" />
+                    {brand}
+                  </label>
+                ))}
+              </div>
+              <div
+                className="mt-2 text-[#2162a1] cursor-pointer hover:underline hover:text-[#033d75]"
+                onClick={() => setShowMore(!showMore)}>
+                {showMore ? "See less" : "See more"}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-base font-bold pb-[8px] pt-[15px]">Customer Reviews</div>
+            </div>
           </div>
 
         </div>
