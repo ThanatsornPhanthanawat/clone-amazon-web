@@ -5,8 +5,14 @@ export default function HomeBanner() {
   return (
     <div className="w-full relative max-w-[2000px] my-[0px] mx-auto object-contain">
       <div className="relative w-full h-full">
-        <img src="https://m.media-amazon.com/images/I/61AnASun+qL._SX3000_.jpg"
-          className="w-full h-full object-cover  " />
+        <a href="#"
+          onClick={(e) => e.preventDefault()}
+          className="cursor-pointer">
+          <img
+            src="https://m.media-amazon.com/images/I/61AnASun+qL._SX3000_.jpg"
+            className="w-full h-full object-cover  " />
+        </a>
+
         <div className="absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-b from-transparent to-[#E3E6E6] pointer-events-none"></div>
       </div>
 
@@ -20,7 +26,12 @@ export default function HomeBanner() {
           <div className="mx-[20px] text-xl font-bold">Gaming accessories</div>
           <div className="my-[10px] mx-[20px] grid grid-cols-[auto_auto]">
             <div className="h-full w-[90%] flex flex-col">
-              <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_1x._SY116_CB667159060_.jpg" className="w-full" />
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="cursor-pointer">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_1x._SY116_CB667159060_.jpg" className="w-full" />
+              </a>
               <div className="text-sm">Headsets</div>
             </div>
             <div className="h-full w-[90%] flex flex-col">

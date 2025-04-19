@@ -1,15 +1,14 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { CiSquareChevLeft } from "react-icons/ci";
-import { CiSquareChevRight } from "react-icons/ci";
-import { IoIosStar } from "react-icons/io";
-import { IoIosStarOutline } from "react-icons/io";
+import { CiSquareChevLeft, CiSquareChevRight } from "react-icons/ci";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
 
 
 export default function Products() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -95,6 +94,7 @@ export default function Products() {
     }
   };
 
+
   return (
     <div className="w-full ">
       <div className="flex shadow-sm shadow-gray-400 h-[40px] pr-[9px] pl-[15px] gap-[25px]">
@@ -129,7 +129,7 @@ export default function Products() {
         </div>
         <div className="flex py-[16px] px-[px]">
           {/* left product page */}
-          <div className="w-[16%] px-[25px] ">
+          <div className="w-[16%] px-[25px] overflow-y-scroll  h-[800px] scrollbar-hide">
             <div>
               <div className="text-base font-bold pb-[8px]">Department</div>
               <div className="flex flex-col gap-2">
