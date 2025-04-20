@@ -3,12 +3,13 @@
 import React, { useRef, useState } from "react";
 import { CiSquareChevLeft, CiSquareChevRight } from "react-icons/ci";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
+import ProductsDeals from "./productsDeals";
 
 
 
 export default function Products() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  
+
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -276,17 +277,22 @@ export default function Products() {
                       type="checkbox"
                       value={program}
                       checked={selectedPrograms.includes(program)}
-                      onChange={() => toggleProgram(program)} 
-                      className="accent-[#2162a1] scale-175"/>
-                      {program}
+                      onChange={() => toggleProgram(program)}
+                      className="accent-[#2162a1] scale-175" />
+                    {program}
                   </label>
                 ))}
               </div>
             </div>
 
           </div>
+          {/* Right Product page */}
+          <div>
+            <ProductsDeals />
+          </div>
 
         </div>
+
       </div>
     </div>
   );
