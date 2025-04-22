@@ -331,26 +331,24 @@ Visit the TP-Link Store`,
     ]
 
     return (
-        <div className="w-[84%]">
-            <div className="grid grid-cols-6 gap-4 p-4 box-border">
-                {deals1.map((item, index) => (
-                    <div
-                        key={index}
-                        className="bg-white">
-                        <div className="relative w-full h-[36px]">
-                            <img
-                                src={item.imageUrl}
-                                alt={item.title}
-                                width={100}
-                                height={36}
-                                className="object-contain"
-                            />
+        <div className="w-[84%] ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 box-border">
+                    {deals1.map((item, index) => (
+                        <div
+                            key={index}
+                            className=" overflow-hidden flex flex-col">
+                            <div className="relative w-full h-[250px]">
+                                <img
+                                    src={item.imageUrl}
+                                    alt={item.title}
+                                    className="object-contain object-contain w-full h-full bg-[#f7f7f7] p-3"
+                                />
+                            </div>
+                            <div className="text-white border-red ">{item.discount} <span className="text-gray-500">Limited time deal</span></div>
+                            <div className="text-black mt-1 line-clamp-2">{item.title}</div>
                         </div>
-                        <div className="text-sm text-white border-red ">{item.discount}</div>
-
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
         </div>
     );
 }

@@ -128,14 +128,14 @@ export default function Products() {
           </div>
           <CiSquareChevRight onClick={scrollRight} className="text-5xl cursor-pointer flex-shrink-0" />
         </div>
-        <div className="flex py-[16px] px-[px]">
+        <div className="flex py-[16px]">
           {/* left product page */}
-          <div className="w-[16%] px-[25px] overflow-y-scroll  h-[800px] scrollbar-hide">
+          <div className="w-[16%] px-[25px] overflow-auto  h-[800px] scrollbar-hide">
             <div>
               <div className="text-base font-bold pb-[8px]">Department</div>
               <div className="flex flex-col gap-2">
                 {departmentsToShow.map((dept, index) => (
-                  <label key={index} className="flex item-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none ">
+                  <label key={index} className="flex items-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none ">
                     <input
                       type="radio"
                       name="department"
@@ -287,9 +287,8 @@ export default function Products() {
 
           </div>
           {/* Right Product page */}
-          <div>
             <ProductsDeals />
-          </div>
+        
 
         </div>
 
