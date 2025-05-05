@@ -66,12 +66,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full h-[1px] bg-[#37475A]"></div>
-        <div className="flex gap-10 mt-[40px]">
+        <div className="flex gap-25 mt-[40px]">
           <div className="flex items-center ">
             <img
               src="/amazonLogo.png"
               alt="amazonLogo"
-              className="w-[80px]" />
+              className="w-[80px] pt-2" />
           </div>
           <div className="flex gap-2">
             <div className="flex items-center gap-2 border border-gray-400 px-5 py-1 cursor-pointer">
