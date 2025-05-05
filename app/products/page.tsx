@@ -98,15 +98,15 @@ export default function Products() {
 
   return (
     <div className="w-full ">
-      <div className="flex shadow-sm shadow-gray-400 h-[40px] pr-[9px] pl-[15px] gap-[25px]">
-        <div className="ml-[13px] flex justify-center items-center font-bold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">
+      <div className="flex shadow-sm shadow-gray-400 h-[30px] pr-[9px] pl-[15px] gap-[25px] text-xs">
+        <div className="ml-[13px] flex justify-center items-center  font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">
           Today's Deals
         </div>
-        <div className="px-[5px] flex justify-center items-center text-sm font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Coupons</div>
-        <div className="px-[5px] flex justify-center items-center text-sm font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Renewed Deals</div>
-        <div className="px-[5px] flex justify-center items-center text-sm font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Outlet</div>
-        <div className="px-[5px] flex justify-center items-center text-sm font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Amazon Resale</div>
-        <div className="px-[5px] flex justify-center items-center text-sm font-semibold cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Grocery Deals</div>
+        <div className="px-[5px] flex justify-center items-center cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Coupons</div>
+        <div className="px-[5px] flex justify-center items-center cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Renewed Deals</div>
+        <div className="px-[5px] flex justify-center items-center cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Outlet</div>
+        <div className="px-[5px] flex justify-center items-center cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Amazon Resale</div>
+        <div className="px-[5px] flex justify-center items-center cursor-pointer border-b-3 border-transparent hover:text-[#2162a1] hover:border-[#2162a1] transition">Grocery Deals</div>
       </div>
       {/* Main Page */}
       <div className="max-w-[2000px]">
@@ -130,19 +130,19 @@ export default function Products() {
         </div>
         <div className="flex py-[16px]">
           {/* left product page */}
-          <div className="w-[16%] px-[25px] overflow-auto  h-[800px] scrollbar-hide">
+          <div className="w-[19%] px-[25px] overflow-auto  h-[800px] scrollbar-hide text-sm">
             <div>
-              <div className="text-base font-bold pb-[8px]">Department</div>
+              <div className="font-bold pb-[8px]">Department</div>
               <div className="flex flex-col gap-2">
                 {departmentsToShow.map((dept, index) => (
-                  <label key={index} className="flex items-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none ">
+                  <label key={index} className="flex items-center gap-2 px-2 py-[1px] rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none ">
                     <input
                       type="radio"
                       name="department"
                       value={dept}
                       checked={selectedDepartment === dept}
                       onChange={() => setSelectedDepartment(dept)}
-                      className="accent-[#2162a1] scale-175" />
+                      className="accent-[#2162a1] scale-150" />
                     {dept}
                   </label>
                 ))}
@@ -155,7 +155,7 @@ export default function Products() {
             </div>
 
             <div>
-              <div className="text-base font-bold pb-[8px] pt-[15px]">Brands</div>
+              <div className="font-bold pb-[8px] pt-[15px]">Brands</div>
               <div className="flex flex-col gap-2">
                 {brandsToShow.map((brand, index) => (
                   <label
@@ -167,7 +167,7 @@ export default function Products() {
                       value={brand}
                       checked={selectedBrands.includes(brand)}
                       onChange={() => toggleBrand(brand)}
-                      className="accent-[#2162a1] scale-175" />
+                      className="accent-[#2162a1] scale-150" />
                     {brand}
                   </label>
                 ))}
@@ -189,7 +189,7 @@ export default function Products() {
                     value="All"
                     checked={selectedRating === "All"}
                     onChange={() => handleRatingChange("All")}
-                    className="accent-[#2162a1] scale-175" />
+                    className="accent-[#2162a1] scale-150" />
                   All
                 </label>
                 {/* Rating */}
@@ -205,29 +205,29 @@ export default function Products() {
                       value={rating}
                       checked={selectedRating === rating}
                       onChange={() => handleRatingChange(rating)}
-                      className="accent-[#2162a1] scale-175" />
-                    <div className="flex items-center">
+                      className="accent-[#2162a1] scale-150" />
+                    <div className="flex items-center -ml-[3px]">
                       {Array.from({ length: 5 }).map((_, index) =>
                         index < rating ? (
-                          <IoIosStar key={index} color="#de7921" size={20} />
+                          <IoIosStar key={index} color="#de7921" size={18} />
                         ) : (
-                          <IoIosStarOutline key={index} color="#de7921" size={20} />
+                          <IoIosStarOutline key={index} color="#de7921" size={18} />
                         )
                       )}
                     </div>
-                    <span className="-mb-[3px] -ml-[3px]">& up</span>
+                    <span className="-mb-[3px] -ml-[4px]">& up</span>
                   </label>
                 ))}
               </div>
             </div>
 
             <div>
-              <div className="text-base font-bold pb-[8px] pt-[15px]">Price</div>
+              <div className="font-bold pb-[8px] pt-[15px]">Price</div>
               <div className="flex flex-col gap-2">
                 {priceOptions.map((option) => (
                   <label
                     key={option.value}
-                    className="flex items-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none "
+                    className="flex items-center gap-2 px-2 py-[1px] rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none "
                   >
                     <input
                       type="radio"
@@ -235,7 +235,7 @@ export default function Products() {
                       value={option.value}
                       checked={selectedPrice === option.value}
                       onChange={() => setSelectedPrice(option.value)}
-                      className="accent-[#2162a1] scale-175"
+                      className="accent-[#2162a1] scale-150"
                     />
                     {option.label}
                   </label>
@@ -249,7 +249,7 @@ export default function Products() {
                 {discountOptions.map((option) => (
                   <label
                     key={option.value}
-                    className="flex items-center gap-2 px-2 py-1 rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none "
+                    className="flex items-center gap-2 px-2 py-[1px] rounded focus-within:ring-2 focus-within:ring-[#2162a1] focus-within:outline-none "
                   >
                     <input
                       type="radio"
@@ -257,7 +257,7 @@ export default function Products() {
                       value={option.value}
                       checked={selectedDiscount === option.value}
                       onChange={() => setSelectedDiscount(option.value)}
-                      className="accent-[#2162a1] scale-175"
+                      className="accent-[#2162a1] scale-150"
                     />
                     {option.label}
                   </label>
@@ -265,7 +265,7 @@ export default function Products() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <div className="text-base font-bold pb-[8px] pt-[15px]">Prime Programs</div>
               <div className="flex flex-col gap-2">
                 {primePrograms.map((program, index) => (
@@ -283,7 +283,7 @@ export default function Products() {
                   </label>
                 ))}
               </div>
-            </div>
+            </div> */}
 
           </div>
           {/* Right Product page */}

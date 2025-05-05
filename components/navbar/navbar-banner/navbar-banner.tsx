@@ -12,11 +12,10 @@ export function NavbarBanner() {
     ]
 
     return (
-        <div className="
-                bg-[#232f3e] pl-[11px] flex h-[39px] justify-between text-white whitespace-nowrap">
+        <div className="bg-[#232f3e] text-white px-[11px] py-[6px] flex flex-col sm:flex-row sm:justify-between sm:items-center w-full gap-y-2">
             {/* left side */}
-            <div className="flex">
-                <div className=" flex px-[9px] py-[8px] justify-center text-white items-center cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid">
+            <div className="flex flex-wrap sm:flex-nowrap">
+                <div className=" flex px-[9px] py-[8px] text-white items-center cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid">
                     <IoMdMenu className="text-2xl" />
                     <div className="text-sm font-semibold pl-[5px]">All</div>
                 </div>
@@ -33,7 +32,7 @@ export function NavbarBanner() {
             </div>
 
             {/* Right side */}
-            <div className=" flex justify-center items-center px-[9px] py-[8px] mr-[20px] text-sm font-semibold text-white cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid">
+            <div className="flex justify-center sm:justify-end items-center px-[9px] py-[8px] text-sm font-semibold cursor-pointer hover:rounded-[3px] hover:border">
                 <div>Get free shipping to Thailand</div></div>
         </div>
     );

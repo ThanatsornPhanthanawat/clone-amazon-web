@@ -10,9 +10,9 @@ import Link from 'next/link';
 export default function NavbarBelt() {
     return (
         <div className="">
-            <div className="bg-[#131921] flex w-full h-[60px] text-white box-border whitespace-nowrap">
+            <div className="bg-[#131921] text-white box-border px-2 sm:px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between w-full min-h-[60px]">
                 {/* Left side */}
-                <div className="flex gap-[5px] p-[8px]">
+                <div className="flex gap-[5px] p-[8px] w-full sm:w-auto">
                     <Link href="/" className="w-[110px] h-[50px] no-underline text-white flex p-[8px] cursor-pointer hover:border-[1px] hover:border-solid hover:rounded-[3px]">
                         <Image src="/amazonLogo.png" alt="amazonLogo" width={97} height={0} className="object-contain transition-none" />
                     </Link>
@@ -29,7 +29,7 @@ export default function NavbarBelt() {
                 </div>
 
                 {/* Center search bar */}
-                <div className="flex items-center justify-center py-[10px] px-[10px] w-4/5">
+                <div className="flex items-center justify-center py-[10px] px-[10px] w-full sm:w-3/5">
                     <div className="flex w-full h-[40px] rounded-sm border-[1px] border-solid border-[#131921]">
                         <div className="flex bg-[#cdcdcd] gap-[5px] rounded-l-[5px] items-center justify-center p-[5px] cursor-pointer text-[#999999]">
                             <div className="text-xs font-semibold pl-[5px]">All</div>
@@ -47,9 +47,9 @@ export default function NavbarBelt() {
                 </div>
 
                 {/* Right side */}
-                <div className="p-[5px] text-white flex gap-[1px]">
-                    <div className="flex justify-center items-center pt-[10px] p-[8px] gap-[5px] cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid">
-                        <Image src="/usaFlag2.png" alt="usaFlag" width={25} height={25} />
+                <div className="flex flex-wrap gap-[1px] justify-end items-center p-[5px] w-full sm:w-auto">
+                    <div className="flex items-center pt-[10px] p-[8px] gap-[5px] cursor-pointer hover:rounded-[3px] hover:border-[1px] hover:border-solid hover:w-[60px]">
+                        <Image src="/usaFlag2.png" alt="usaFlag" width={25} height={25} className="h-[10px] w-[18px]" />
                         <div className="text-sm flex items-center font-bold">
                             EN
                             <MdOutlineArrowDropDown className="text-base mt-1 -ml-0.4 text-[#ccc]" />

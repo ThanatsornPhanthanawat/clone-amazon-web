@@ -1,5 +1,8 @@
 "use client";
 import * as React from "react";
+import { useRef } from "react";
+import { CiSquareChevLeft, CiSquareChevRight } from "react-icons/ci";
+
 
 
 
@@ -150,7 +153,7 @@ Visit the TP-Link Store`,
             isLimited: true,
             imageUrl: "https://m.media-amazon.com/images/I/6143sj3-jPL._AC_SX522_.jpg"
         }
-    ]
+    ];
 
     const offers = [
         {
@@ -178,10 +181,10 @@ Visit the TP-Link Store`,
             title: "Over 70% off Women's Fashion"
         },
         {
-            imageUrl: "https://m.media-amazon.com/images/I/11sEd8U0vqL.jpg",
+            imageUrl: "https://m.media-amazon.com/images/I/316EMNKnYVL.jpg",
             title: "Beauty under $25"
         },
-    ]
+    ];
 
     const deals2 = [
         {
@@ -328,27 +331,99 @@ Visit the TP-Link Store`,
             isLimited: true,
             imageUrl: "https://m.media-amazon.com/images/I/71sk4bMjQUL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
         }
-    ]
+    ];
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scrollLeft = () => {
+        const container = scrollRef.current;
+        if (container) {
+            if (container.scrollLeft === 0) {
+                container.scrollTo({ left: container.scrollWidth, behavior: "smooth" })
+            } else {
+                container.scrollBy({ left: -800, behavior: "smooth" })
+            }
+        }
+    };
+
+    const scrollRight = () => {
+        const container = scrollRef.current;
+        if (container) {
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+            if (Math.ceil(container.scrollLeft) >= maxScrollLeft) {
+                container.scrollTo({ left: 0, behavior: "smooth" })
+            } else {
+                container.scrollBy({ left: 800, behavior: "smooth" })
+            }
+        }
+    };
+
 
     return (
-        <div className="w-[84%] ">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 box-border">
-                    {deals1.map((item, index) => (
-                        <div
-                            key={index}
-                            className=" overflow-hidden flex flex-col">
-                            <div className="relative w-full h-[250px]">
-                                <img
-                                    src={item.imageUrl}
-                                    alt={item.title}
-                                    className="object-contain object-contain w-full h-full bg-[#f7f7f7] p-3"
-                                />
-                            </div>
-                            <div className="text-white border-red ">{item.discount} <span className="text-gray-500">Limited time deal</span></div>
-                            <div className="text-black mt-1 line-clamp-2">{item.title}</div>
+        <div className="w-[81%] ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 box-border">
+                {deals1.map((item, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col">
+                        <div className="relative w-full h-[200px] pb-1">
+                            <img
+                                src={item.imageUrl}
+                                alt={item.title}
+                                className="object-contain w-full h-full bg-[#f7f7f7] p-3"
+                            />
                         </div>
-                    ))}
+                        <div className="flex items-center gap-1">
+                            <div className="bg-[#cc0c39] text-white py-[3px] px-2 rounded-sm text-xs">{item.discount} </div>
+                            <div className="text-[#cc0c39] font-semibold text-xs">Limited time deal</div>
+                        </div>
+                        <div className="text-black mt-1 line-clamp-2 text-sm">{item.title}</div>
+                    </div>
+                ))}
+            </div>
+            <div className="pl-6 pr-6">
+                <div className="pt-12 text-2xl font-bold">Can't-miss offers</div>
+                <div className="flex items-center">
+                    <CiSquareChevLeft onClick={scrollLeft} className=" text-gray-500 cursor-pointer flex-shrink-0" size={70} />
+                    <div
+                        ref={scrollRef}
+                        className="flex overflow-x-auto scroll-smooth scrollbar-hide box-border gap-3 pt-3 ">
+                        {offers.map((item, index) => (
+                            <div
+                                key={index}
+                                className="overflow-hidden flex flex-col flex-shrink-0">
+                                <div className="relative w-[250px] h-[240px] ">
+                                    <img
+                                        src={item.imageUrl}
+                                        alt={item.title}
+                                        className="object-cover w-full h-full rounded-t-sm" />
+                                </div>
+                                <div className="pl-3 pt-1 pb-[30px] font-medium text-base border-b border-x border-b-[#c2ccd6] border-x-gray-100 rounded-b-sm">{item.title}</div>
+                            </div>
+                        ))}
+                    </div>
+                    <CiSquareChevRight onClick={scrollRight} className=" text-gray-500 cursor-pointer flex-shrink-0" size={70} />
                 </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6  gap-6 box-border pt-12">
+                {deals2.map((item, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col">
+                        <div className="relative w-full h-[200px] pb-1">
+                            <img
+                                src={item.imageUrl}
+                                alt={item.title}
+                                className="object-contain w-full h-full bg-[#f7f7f7] p-3" />
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <div className="bg-[#cc0c39] text-white py-[3px] px-2 rounded-sm text-xs">{item.discount}</div>
+                            <div className="text-[#cc0c39] font-semibold text-xs">Limited time deal</div>
+                        </div>
+                        <div className="text-black mt-1 line-clamp-2 text-sm">{item.title}</div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
