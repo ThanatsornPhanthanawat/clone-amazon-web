@@ -12,7 +12,7 @@ export default function NavbarBelt() {
         <div className="">
             <div className="bg-[#131921] text-white box-border px-2 sm:px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between w-full min-h-[60px]">
                 {/* Left side */}
-                <div className="flex gap-[5px] p-[8px] w-full sm:w-auto">
+                <div className="flex gap-[5px]  w-full sm:w-auto">
                     <Link href="/" className="w-[110px] h-[50px] no-underline text-white flex p-[8px] cursor-pointer hover:border-[1px] hover:border-solid hover:rounded-[3px]">
                         <Image src="/amazonLogo.png" alt="amazonLogo" width={97} height={0} className="object-contain transition-none" />
                     </Link>
